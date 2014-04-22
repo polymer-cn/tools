@@ -30,13 +30,14 @@ prepare() {
   NodeBind
   PointerEvents
   PointerGestures
-  # ShadowDOM
+  polymer-gestures
+  ShadowDOM
   TemplateBinding
   URL
   WeakMap
   observe-js
-  # platform
-  # platform-dev
+  platform
+  platform-dev
   polymer
   polymer-dev
   polymer-expressions
@@ -48,13 +49,6 @@ prepare() {
   for REPO in ${REPOS[@]}; do
     REPO_PATHS+=("$POLYMER_PATH/$REPO.git")
   done
-
-  REPOS+=("ShadowDOM")
-  REPO_PATHS+=("https://github.com/polymer-cn/ShadowDOM.git")
-  REPOS+=("platform")
-  REPO_PATHS+=("https://github.com/polymer-cn/platform.git")
-  REPOS+=("platform-dev")
-  REPO_PATHS+=("https://github.com/polymer-cn/platform-dev.git")
 
   # Web Animations has its own org, hardcode full path
   REPOS+=("web-animations-js")

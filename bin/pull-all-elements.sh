@@ -31,6 +31,44 @@ prepare() {
   fi
 
   REPOS=(
+  core-action-icons
+  core-ajax
+  core-component-page
+  core-component-page-dev
+  core-elements
+  core-doc-viewer
+  core-field
+  core-firebase
+  core-home-page
+  core-home-page-dev
+  core-icon
+  core-iconset
+  core-iconset-svg
+  core-layout
+  core-layout-grid
+  core-layout-trbl
+  core-localstorage
+  core-media-query
+  core-meta
+  core-range
+  core-selection
+  core-selector
+  core-tests
+  core-docs
+  core-theme-aware
+  core-overlay
+  core-toolbar
+  core-tooltip
+  core-menu
+  core-icon-button
+  core-input
+  core-item
+  core-collapse
+  core-pages
+  core-header-panel
+  core-drawer-panel
+  core-transition
+  core-list
   ace-element
   chart-js
   code-mirror
@@ -112,6 +150,7 @@ prepare() {
   polymer-ui-toolbar
   polymer-ui-weather
   polymer-view-source-link
+  sampler-scaffold
   smoothie-chart
   speech-mic
   speech-transcript
@@ -136,6 +175,7 @@ prepare() {
   yt-search
   yt-search-video
   yt-video
+  github-elements
   )
 
   # Array of all the repos with full path
