@@ -24,15 +24,15 @@ prepare() {
 
   # Short names for all the repos
   REPOS=(
-  CustomElements
-  HTMLImports
-  MutationObservers
+  # CustomElements
+  # HTMLImports
+  # MutationObservers
   NodeBind
   PointerEvents
   PointerGestures
   polymer-gestures
   # ShadowDOM
-  TemplateBinding
+  # TemplateBinding
   URL
   WeakMap
   observe-js
@@ -50,6 +50,14 @@ prepare() {
     REPO_PATHS+=("$POLYMER_PATH/$REPO.git")
   done
 
+  REPOS+=("CustomElements")
+  REPO_PATHS+=("https://github.com/polymer-cn/CustomElements.git")
+  REPOS+=("MutationObservers")
+  REPO_PATHS+=("https://github.com/polymer-cn/MutationObservers.git")
+  REPOS+=("TemplateBinding")
+  REPO_PATHS+=("https://github.com/polymer-cn/TemplateBinding.git")
+  REPOS+=("HTMLImports")
+  REPO_PATHS+=("https://github.com/polymer-cn/HTMLImports.git")
   REPOS+=("ShadowDOM")
   REPO_PATHS+=("https://github.com/polymer-cn/ShadowDOM.git")
   REPOS+=("platform")
