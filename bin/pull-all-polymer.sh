@@ -14,60 +14,58 @@ SSH=0
 REPOS=()
 REPO_PATHS=()
 ORG="Polymer"
+ORG_CN="polymer-cn"
 
 prepare() {
   if [ $SSH -eq 1 ]; then
     POLYMER_PATH="git@github.com:$ORG"
+    POLYMER_CN_PATH="git@github.com:$ORG_CN"
   else
     POLYMER_PATH="https://github.com/$ORG"
+    POLYMER_CN_PATH="https://github.com/$ORG_CN"
   fi
 
   # Short names for all the repos
-  REPOS=(
-  # CustomElements
-  # HTMLImports
-  # MutationObservers
+  REPOS_POLYMER=(
   NodeBind
   PointerEvents
   PointerGestures
   polymer-gestures
-  # ShadowDOM
-  # TemplateBinding
   URL
   WeakMap
   observe-js
-  # platform
-  # platform-dev
   polymer
   polymer-dev
   polymer-expressions
   tools
   )
 
+  REPOS_FORKED_ON_CN=(
+  CustomElements
+  HTMLImports
+  MutationObservers
+  ShadowDOM
+  TemplateBinding
+  platform
+  platform-dev
+  )
+
   # Array of all the repos with full path
 
-  for REPO in ${REPOS[@]}; do
+  for REPO in ${REPOS_POLYMER[@]}; do
     REPO_PATHS+=("$POLYMER_PATH/$REPO.git")
   done
 
-  REPOS+=("CustomElements")
-  REPO_PATHS+=("https://github.com/polymer-cn/CustomElements.git")
-  REPOS+=("MutationObservers")
-  REPO_PATHS+=("https://github.com/polymer-cn/MutationObservers.git")
-  REPOS+=("TemplateBinding")
-  REPO_PATHS+=("https://github.com/polymer-cn/TemplateBinding.git")
-  REPOS+=("HTMLImports")
-  REPO_PATHS+=("https://github.com/polymer-cn/HTMLImports.git")
-  REPOS+=("ShadowDOM")
-  REPO_PATHS+=("https://github.com/polymer-cn/ShadowDOM.git")
-  REPOS+=("platform")
-  REPO_PATHS+=("https://github.com/polymer-cn/platform.git")
-  REPOS+=("platform-dev")
-  REPO_PATHS+=("https://github.com/polymer-cn/platform-dev.git")
+  for REPO in ${REPOS_FORKED_ON_CN[@]}; do
+    REPO_PATHS+=("$POLYMER_CN_PATH/$REPO.git")
+  done
+
+  REPOS=("${REPOS_POLYMER[@]}" "${REPOS_FORKED_ON_CN[@]}")
 
   # Web Animations has its own org, hardcode full path
   REPOS+=("web-animations-js")
   REPO_PATHS+=("https://github.com/web-animations/web-animations-js.git")
+
 }
 
 # repos that fail to clone will be put here
